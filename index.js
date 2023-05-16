@@ -10,6 +10,7 @@ app.options("*", cors());
 
 //middleware
 app.use(express.json());
+app.use(morgan("tiny"));
 
 //Routes
 app.get("/", (req, res) => {
@@ -40,3 +41,5 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`server is running :${port}`);
 });
+
+module.exports = app;
