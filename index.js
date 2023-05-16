@@ -10,7 +10,6 @@ app.options("*", cors());
 
 //middleware
 app.use(express.json());
-app.use(morgan("tiny"));
 
 //Routes
 app.get("/", (req, res) => {
