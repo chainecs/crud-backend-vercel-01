@@ -13,6 +13,9 @@ app.use(express.json());
 app.use(morgan("tiny"));
 
 //Routes
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
 const usersRoutes = require("./routes/userRoute");
 const api = process.env.API_URL;
 const userApi = `${api}/user`;
@@ -38,5 +41,3 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`server is running :${port}`);
 });
-
-module.exports = app;
